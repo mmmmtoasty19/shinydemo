@@ -24,9 +24,9 @@ requireNamespace("OuhscMunge"   ) # remotes::install_github(repo="OuhscBbmc/Ouhs
 
 # ---- declare-globals ---------------------------------------------------------
 # Constant values that won't change.
-config                         <- config::get()
-set.seed(453)
-figure_path <- 'stitched-output/manipulation/simulation/simulate-mlm-1/'
+# config                         <- config::get()
+set.seed(24)
+# figure_path <- 'stitched-output/manipulation/simulation/simulate-mlm-1/'
 
 subject_count       <- 20
 wave_count          <- 10
@@ -259,9 +259,12 @@ ds_slim_subject <-
 ds_slim
 
 
+
 # ---- save-to-disk ------------------------------------------------------------
 # If there's no PHI, a rectangular CSV is usually adequate, and it's portable to other machines and software.
-readr::write_csv(ds_slim        , config$path_mlm_1_raw)
-readr::write_csv(ds_slim_subject, config$path_subject_1_raw)
+# readr::write_csv(ds_slim        , config$path_mlm_1_raw)
+# readr::write_csv(ds_slim_subject, config$path_subject_1_raw)
 
-usethis::use_data(DATASET, overwrite = TRUE)
+mlm_1 <- ds
+
+usethis::use_data(mlm_1, overwrite = TRUE)
